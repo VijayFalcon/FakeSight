@@ -15,8 +15,8 @@ Gradio web interface — runs directly in Google Colab with a public shareable l
 
 🗂️ Dataset
 FakeSight is trained on a custom merged dataset combining three sources:
-DatasetSamplesDescriptionWELFake72,134Benchmark English fake news datasetISOT Fake News44,898Real and fake news from Reuters and other sourcesLIAR~12,800Political statements labeled by PolitiFact
-After merging, deduplication and cleaning: ~75,000 samples, ~55% real / ~45% fake.
+DatasetSamplesDescriptionWELFake72,134Benchmark English fake news datasetISOT Fake News44,898Real and fake news from Reuters and other sourcesLIAR11,470Political statements labeled by PolitiFact
+After merging, deduplication and cleaning: 74,570 samples, ~55% real / ~45% fake.
 
 🏗️ Architecture
 Data Pipeline
@@ -46,11 +46,11 @@ Gradio interface for user interaction
 🗃️ Repository Structure
 FakeSight/
 │
-├── ExAIFakeNewsData.ipynb        # Data merging and preprocessing
-├── ExAIFakeSightEnsemble.ipynb   # Stacking ensemble training
-├── ExAIFakeSightXAI.ipynb        # Standalone SHAP + LIME analysis
-├── ExAIAddLIAR.ipynb             # LIAR dataset integration
-├── FakeSight.ipynb               # Main Gradio demo
+├── ExAIFakeNewsData.ipynb          # Data merging and preprocessing
+├── ExAIAddLIAR.ipynb               # LIAR dataset integration
+├── ExAIFakeSightEnsemble.ipynb     # Stacking ensemble training + model saving
+├── ExAIFakeSightXAI.ipynb          # Standalone SHAP + LIME analysis notebook
+├── FakeSightExplainer.ipynb        # Main Gradio demo (LIME + Groq)
 └── README.md
 
 🚀 Running the Demo
@@ -58,9 +58,10 @@ FakeSight/
 Upload all notebooks to Google Colab
 Place datasets in /MyDrive/ExAI/ on Google Drive
 Run ExAIFakeNewsData.ipynb to prepare the dataset
+Run ExAIAddLIAR.ipynb to merge the LIAR dataset
 Run ExAIFakeSightEnsemble.ipynb to train and save models
 Get a free Groq API key from console.groq.com
-Run FakeSight.ipynb — a public Gradio link will be generated
+Run FakeSightExplainer.ipynb — a public Gradio link will be generated
 
 
 ⚠️ Known Limitations
